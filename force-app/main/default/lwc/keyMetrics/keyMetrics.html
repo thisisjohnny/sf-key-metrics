@@ -2,7 +2,7 @@
     <lightning-layout>
         <template for:each={metrics} for:item="metric">
             <lightning-layout-item flexibility="auto" padding="around-small" key={metric.id}>
-                <c-key-metric metric={metric.apiName}></c-key-metric>
+                <c-key-metric metric={metric}></c-key-metric>
             </lightning-layout-item>
         </template>
     </lightning-layout>

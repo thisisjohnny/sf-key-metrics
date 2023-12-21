@@ -6,9 +6,17 @@ public with sharing class KeyMetricsController {
                 Object_API_Name__c, 
                 Card_Format__c, 
                 Metric_1_API_Name__c,
+                Metric_1_Label__c,
+                Metric_1_Format__c,
                 Metric_2_API_Name__c,
+                Metric_2_Label__c,
+                Metric_2_Format__c,
                 Metric_3_API_Name__c,
-                Metric_4_API_Name__c
+                Metric_3_Label__c,
+                Metric_3_Format__c,
+                Metric_4_API_Name__c,
+                Metric_4_Label__c,
+                Metric_4_Format__c
             FROM
                 Key_Metrics_Setting__mdt 
             WHERE
@@ -17,4 +25,16 @@ public with sharing class KeyMetricsController {
 
         return metricSettings;
     }
+
+    /*
+    @AuraEnabled(cacheable=true)
+    public static string methodName(){
+        
+        try {
+            
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
+    */
 }
