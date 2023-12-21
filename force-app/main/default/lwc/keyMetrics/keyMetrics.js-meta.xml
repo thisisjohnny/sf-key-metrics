@@ -9,7 +9,7 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__RecordPage">
-            <property name="color" type="String" />
+            <property name="customMetadataLabel" label="Custom Metadata Label" description="Label of the custom metatada record holding settings for this component" type="String" />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>
