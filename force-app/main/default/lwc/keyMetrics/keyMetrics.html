@@ -1,0 +1,9 @@
+<template>
+    <lightning-layout>
+        <template for:each={examples} for:item="example">
+            <lightning-layout-item flexibility="auto" padding="around-small" key={example.id}>
+                <c-key-metric metric={example.apiName}></c-key-metric>
+            </lightning-layout-item>
+        </template>
+    </lightning-layout>
+</template>

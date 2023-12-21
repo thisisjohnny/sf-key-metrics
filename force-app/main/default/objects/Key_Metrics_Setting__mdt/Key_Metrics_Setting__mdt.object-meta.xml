@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Settings for configuring the Key Metrics LWC. The LWC sits on a Lightning Record Page and displays up to four key metrics in nicely displayed cards with dynamic rendering. As records are updated, metrics cards are updated in real time.</description>
+    <label>Key Metrics Setting</label>
+    <pluralLabel>Key Metrics Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>
