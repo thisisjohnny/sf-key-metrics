@@ -5,8 +5,29 @@ import getMetadataValues from '@salesforce/apex/KeyMetricsController.getMetadata
 export default class KeyMetrics extends LightningElement {
     @api customMetadataLabel;
     @api recordId;
+    @api themeBackgroundColor;
+    @api themeMetricTextColor;
+    @api themeMetricLabelColor;
 
     metrics = [];
+
+    renderedCallback() {
+        if (this.themeBackgroundColor != null) {
+            this.template
+                .querySelector("lightning-layout")
+                .style.setProperty("--card-background-color", this.themeBackgroundColor);
+        }
+        if (this.themeMetricTextColor != null) {
+            this.template
+                .querySelector("lightning-layout")
+                .style.setProperty("--metric-text-color", this.themeMetricTextColor);
+        }
+        if (this.themeMetricLabelColor != null ) {
+            this.template
+                .querySelector("lightning-layout")
+                .style.setProperty("--metric-label-color", this.themeMetricLabelColor);
+        }
+    }
 
     @wire(getMetadataValues, { customMetadataLabel: "$customMetadataLabel" })
     metadataValues({ error, data }) {

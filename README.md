@@ -1,18 +1,23 @@
-# Salesforce DX Project: Next Steps
+# Key Metrics Lightning Web Component
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+![Screenshot of component included on a Lightning Record Page. Image shows custom LWC on the Details tab of an account record page with component settings open on the right-hand side of the screen.](/images/key-metrics.png)
 
-## How Do You Plan to Deploy Your Changes?
+This Key Metrics component allows you to display certain key fields more visually appealing than through using Compact Layouts and the standard Highlights Pannel. The advantage here as well is that multiple components with multiple configurations can be added to the same record page. The component takes advantage of custom metadata types for the configuration of the component, allowing you to package the settings for distribution. Only colors have remained options directly from the Lightning App Builder to allow admins the ability to view changes in color on the fly. If no colors are modified, the component will default to using a preset palette based off of the Salesforce "Lightning Ridge" Themes and Branding option.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## What To Do
 
-## Configure Your Salesforce DX Project
+### Deploy this package
+1. Deploy this package to your Salesforce environment, use the [Salesforce DX Public Deployer](https://hosted-scratch.herokuapp.com/byoo?template=https://github.com/thisisjohnny/sf-key-metrics) and choose the option best for you 
+2. Go to Settings > Custom Metadata Types and click the _Manage Records_ action link
+3. Click New to create your new configuration. (Reference the Example Settings included as a starting point if needed.)
+4. Add the component to any Lightning Record Page
+5. Drag the Key Metrics custom component to your Lightning App Builder canvas and set the Custom Metadata Label information. (Note: This is not case sensitive)
+6. Save and Activate your page
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+## Caveats
+*This package is provided without warranty or gaurantee.*
 
-## Read All About It
+This package is provided without warranty. This package may not work in your environment and requires other dependendies. This software has not been fully tested nor developed with strict security and access controls in mind. By installing this package in your org, you assume all risk of consequences and agree not to hold myself or my employer liable.
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+----
+_Made with_ 🎅 _in Reston_

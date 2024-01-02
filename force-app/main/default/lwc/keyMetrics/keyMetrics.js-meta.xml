@@ -10,6 +10,9 @@
     <targetConfigs>
         <targetConfig targets="lightning__RecordPage">
             <property name="customMetadataLabel" label="Custom Metadata Label" description="Label of the custom metatada record holding settings for this component" type="String" />
+            <property name="themeBackgroundColor" label="Card Background Color" description="Color of the card background for the metric. Can be CSS color keywords (e.g. darkmagenta), HEX values (e.g. #581C5B), or RGB values (e.g. rgb(88,28,91))" type="String"></property>
+            <property name="themeMetricTextColor" label="Metric Text Color" description="Color of the metric value. Can be CSS color keywords (e.g. darkmagenta), HEX values (e.g. #581C5B), or RGB values (e.g. rgb(88,28,91))" type="String"></property>
+            <property name="themeMetricLabelColor" label="Metric Label Color" description="Color of the metric label. Can be CSS color keywords (e.g. darkmagenta), HEX values (e.g. #581C5B), or RGB values (e.g. rgb(88,28,91))" type="String"></property>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

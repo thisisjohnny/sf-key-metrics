@@ -1,7 +1,21 @@
 <template>
-    <div class="custom-box slds-box slds-var-p-around_medium slds-text-align_center">
-        <p>RecordId: {metric.recordId}</p>
-        <p>API Name: {metric.apiName}</p>
-        <p>Label: {metric.label}</p>
+    <div class="metric-card slds-box slds-var-p-around_medium slds-text-align_center">
+        <!-- large formatted metric -->
+        <div class="metric-value">
+            <template lwc:if={metricFormatCurrency}>
+                <lightning-formatted-number value={value} format-style={metricFormat} currency-code={metricCurrency} currency-display-as={metricDisplay}></lightning-formatted-number>
+            </template>
+            <template lwc:elseif={metricFormatNumber}>
+                <lightning-formatted-number value={value} format-style={metricFormat} maximum-fraction-digits={metricMaximumDigits}></lightning-formatted-number>
+            </template>
+            <template lwc:else>
+                <lightning-formatted-rich-text value={value}></lightning-formatted-rich-text>
+            </template>
+        </div>
+
+        <!-- smaller display text -->
+        <div class="metric-label">
+            {metric.label}
+        </div>
     </div>
 </template>

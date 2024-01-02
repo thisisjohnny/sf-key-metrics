@@ -1,0 +1,13 @@
+.metric-card {
+    background-color: var(--card-background-color, #e9f3fd);
+}
+
+.metric-value {
+    color: var(--metric-text-color, #17577D);
+    font-size: 5em;
+}
+
+.metric-label {
+    color: var(--metric-label-color, #0c2b3e);
+    font-size: 1em;
+}
