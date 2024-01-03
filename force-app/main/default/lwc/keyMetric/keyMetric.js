@@ -1,8 +1,8 @@
 import { LightningElement, api, wire } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import { getRecord, getFieldValue } from "lightning/uiRecordApi";
 import LOCALE from '@salesforce/i18n/locale';
 import CURRENCY from '@salesforce/i18n/currency';
-import getMetricValue from '@salesforce/apex/KeyMetricsController.getMetricValue';
 
 export default class KeyMetric extends LightningElement {
     @api metric;
@@ -11,6 +11,7 @@ export default class KeyMetric extends LightningElement {
     metricDisplay = 'code';
     metricMaximumDigits = 2;
     value;
+    field;
 
     renderedCallback() {
         if(this.metric.format == 'currency') {
@@ -20,14 +21,17 @@ export default class KeyMetric extends LightningElement {
             this.metricFormatNumber = true;
             this.metricFormatCurrency = false;
         }
+        this.field = this.metric.objectApiName + '.' + this.metric.apiName;
     }
 
-    @wire(getMetricValue, { recordId: "$metric.recordId", objectApiName: "$metric.objectApiName", fieldApiName: "$metric.apiName" })
+    @wire(getRecord, {recordId: "$metric.recordId", fields: "$field"})
     metricValue({ error, data }) {
         if(data && this.metric.format == 'percent') {
-            this.value = data / 100;
+            let fieldValue = getFieldValue(data, this.field);
+            this.value = fieldValue / 100;
         } else if (data) {
-            this.value = data;
+            let fieldValue = getFieldValue(data, this.field);
+            this.value = fieldValue;
         } else if (error) {
             const errorToastEvent = new ShowToastEvent({
                 title: "Oops! Something went wrong.",

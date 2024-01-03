@@ -25,12 +25,4 @@ public with sharing class KeyMetricsController {
 
         return metricSettings;
     }
-
-    @AuraEnabled(cacheable=true)
-    public static Object getMetricValue(String recordId, String objectApiName, String fieldApiName){
-        String dbquery = 'SELECT ' + fieldApiName + ' FROM ' + objectApiName + ' WHERE Id = \'' + recordId + '\'';
-        sObject sobj = Database.query(dbQuery);
-
-        return sobj.get(fieldApiName);
-    }
 }
