@@ -10,7 +10,7 @@ This Key Metrics component allows you to display certain key fields more visuall
 
 ### Deploy this package
 1. Deploy this package to your Salesforce environment, use the [Salesforce DX Public Deployer](https://hosted-scratch.herokuapp.com/byoo?template=https://github.com/thisisjohnny/sf-key-metrics) and choose the option best for you 
-2. Go to Settings > Custom Metadata Types and click the _Manage Records_ action link
+2. Go to Settings > Custom Metadata Types and click the _Manage Records_ action link next to the Key Metrics Setting label
 3. Click New to create your new configuration. (Reference the Example Settings included as a starting point if needed.)
 4. Add the component to any Lightning Record Page
 5. Drag the Key Metrics custom component to your Lightning App Builder canvas and set the Custom Metadata Label information. (Note: This is not case sensitive)

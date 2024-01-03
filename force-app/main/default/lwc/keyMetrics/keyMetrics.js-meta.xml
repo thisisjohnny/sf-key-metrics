@@ -6,9 +6,18 @@
     <description>Displays dynamic list of key metrics from the object record page</description>
     <targets>
         <target>lightning__RecordPage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__RecordPage">
+            <property name="customMetadataLabel" label="Custom Metadata Label" description="Label of the custom metatada record holding settings for this component" type="String" />
+            <property name="themeBackgroundColor" label="Card Background Color" description="Color of the card background for the metric. Can be CSS color keywords (e.g. darkmagenta), HEX values (e.g. #581C5B), or RGB values (e.g. rgb(88,28,91))" type="String"></property>
+            <property name="themeMetricTextColor" label="Metric Text Color" description="Color of the metric value. Can be CSS color keywords (e.g. darkmagenta), HEX values (e.g. #581C5B), or RGB values (e.g. rgb(88,28,91))" type="String"></property>
+            <property name="themeMetricLabelColor" label="Metric Label Color" description="Color of the metric label. Can be CSS color keywords (e.g. darkmagenta), HEX values (e.g. #581C5B), or RGB values (e.g. rgb(88,28,91))" type="String"></property>
+        </targetConfig>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="recordId" label="Record Id" description="To work on Experience Cloud pages, do not change this value" type="String" default="{!recordId}"/>
             <property name="customMetadataLabel" label="Custom Metadata Label" description="Label of the custom metatada record holding settings for this component" type="String" />
             <property name="themeBackgroundColor" label="Card Background Color" description="Color of the card background for the metric. Can be CSS color keywords (e.g. darkmagenta), HEX values (e.g. #581C5B), or RGB values (e.g. rgb(88,28,91))" type="String"></property>
             <property name="themeMetricTextColor" label="Metric Text Color" description="Color of the metric value. Can be CSS color keywords (e.g. darkmagenta), HEX values (e.g. #581C5B), or RGB values (e.g. rgb(88,28,91))" type="String"></property>
