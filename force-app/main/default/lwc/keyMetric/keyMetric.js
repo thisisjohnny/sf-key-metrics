@@ -24,12 +24,14 @@ export default class KeyMetric extends LightningElement {
 
     @wire(getMetricValue, { recordId: "$metric.recordId", objectApiName: "$metric.objectApiName", fieldApiName: "$metric.apiName" })
     metricValue({ error, data }) {
-        if(data) {
+        if(data && this.metric.format == 'percent') {
+            this.value = data / 100;
+        } else if (data) {
             this.value = data;
         } else if (error) {
             const errorToastEvent = new ShowToastEvent({
                 title: "Oops! Something went wrong.",
-                message: "John can't code so the value coming back from the Apex controller on the metric is busted.",
+                message: `There was an error returning the value for ${this.metric.label}`,
                 mode: "dismissible",
                 variant: "error"
             });
