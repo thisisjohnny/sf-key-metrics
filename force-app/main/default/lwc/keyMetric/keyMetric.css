@@ -1,5 +1,5 @@
 .metric-card {
-    background-color: var(--card-background-color, #e9f3fd);
+    background: var(--card-background-color, #e9f3fd);
 }
 
 .metric-value {
