@@ -70,15 +70,15 @@
                 <emptySpace>true</emptySpace>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>Metric_2_Label__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>Metric_2_API_Name__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>Metric_2_Format__c</field>
             </layoutItems>
         </layoutColumns>

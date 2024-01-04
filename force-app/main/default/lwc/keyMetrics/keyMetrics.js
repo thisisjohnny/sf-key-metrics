@@ -32,7 +32,11 @@ export default class KeyMetrics extends LightningElement {
     @wire(getMetadataValues, { customMetadataLabel: "$customMetadataLabel" })
     metadataValues({ error, data }) {
         if (data) {
-            if (data.Card_Format__c == 2) {
+            if(data.Card_Format__c == 1) {
+                this.metrics = [
+                    { id: 1, recordId: this.recordId, objectApiName: data.Object_API_Name__c, apiName: data.Metric_1_API_Name__c, label: data.Metric_1_Label__c, format: data.Metric_1_Format__c }
+                ]
+            } else if (data.Card_Format__c == 2) {
                 this.metrics = [
                     { id: 1, recordId: this.recordId, objectApiName: data.Object_API_Name__c, apiName: data.Metric_1_API_Name__c, label: data.Metric_1_Label__c, format: data.Metric_1_Format__c },
                     { id: 2, recordId: this.recordId, objectApiName: data.Object_API_Name__c, apiName: data.Metric_2_API_Name__c, label: data.Metric_2_Label__c, format: data.Metric_2_Format__c}
@@ -53,8 +57,8 @@ export default class KeyMetrics extends LightningElement {
             }
         } else if (error) {
             const errorToastEvent = new ShowToastEvent({
-                title: "Oops! Something went wrong.",
-                message: "Ensure you have configured your custom metadata type and supplied the correct label in the LWC settings on this page.",
+                title: "Error Loading Custom Metadata Type",
+                message: "Ensure custom metadata type is configured correctly for this component and the correct user permissions have been applied",
                 mode: "dismissible",
                 variant: "error"
             });

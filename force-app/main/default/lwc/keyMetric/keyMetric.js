@@ -35,7 +35,7 @@ export default class KeyMetric extends LightningElement {
         } else if (error) {
             const errorToastEvent = new ShowToastEvent({
                 title: "Oops! Something went wrong.",
-                message: `There was an error returning the value for ${this.metric.label}`,
+                message: `There was an error returning the value for ${this.metric.label}. Ensure user access to the field`,
                 mode: "dismissible",
                 variant: "error"
             });

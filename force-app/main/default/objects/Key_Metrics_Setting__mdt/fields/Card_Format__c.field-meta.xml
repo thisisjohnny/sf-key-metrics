@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Card_Format__c</fullName>
-    <description>Displays cards across the layout either in a 2, 3, or 4-up configuration.</description>
+    <description>Displays cards across the layout either in a 1, 2, 3, or 4-up configuration.</description>
     <externalId>false</externalId>
     <fieldManageability>DeveloperControlled</fieldManageability>
-    <inlineHelpText>It is recommended for smaller devices to use the 2-Up configuration</inlineHelpText>
+    <inlineHelpText>It is recommended for smaller devices to use the 1-up or 2-Up configuration</inlineHelpText>
     <label>Card Format</label>
     <required>true</required>
     <type>Picklist</type>
@@ -13,8 +13,13 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>2</fullName>
+                <fullName>1</fullName>
                 <default>true</default>
+                <label>1-Up</label>
+            </value>
+            <value>
+                <fullName>2</fullName>
+                <default>false</default>
                 <label>2-Up</label>
             </value>
             <value>
