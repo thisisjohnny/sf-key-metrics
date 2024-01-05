@@ -26,6 +26,11 @@
                 <label>percent</label>
             </value>
             <value>
+                <fullName>date</fullName>
+                <default>false</default>
+                <label>date</label>
+            </value>
+            <value>
                 <fullName>text</fullName>
                 <default>false</default>
                 <label>text</label>

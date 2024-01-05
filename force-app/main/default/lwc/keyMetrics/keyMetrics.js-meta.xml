@@ -15,6 +15,8 @@
             <property name="themeBackgroundColor" label="Card Background Color" description="Color of the card background for the metric. Can be CSS color keywords (e.g. darkmagenta), HEX values (e.g. #581C5B), or RGB values (e.g. rgb(88,28,91))" type="String"></property>
             <property name="themeMetricTextColor" label="Metric Text Color" description="Color of the metric value. Can be CSS color keywords (e.g. darkmagenta), HEX values (e.g. #581C5B), or RGB values (e.g. rgb(88,28,91))" type="String"></property>
             <property name="themeMetricLabelColor" label="Metric Label Color" description="Color of the metric label. Can be CSS color keywords (e.g. darkmagenta), HEX values (e.g. #581C5B), or RGB values (e.g. rgb(88,28,91))" type="String"></property>
+            <property name="themeMetricTextSize" label="Metric Text Size" description="Size of the metric value. Can be CSS size keywords (e.g. x-small), pixel size (e.g. 24px), or relative units (e.g. 5em)" type="String"></property>
+            <property name="themeMetricLabelSize" label="Metric Label Size" description="Size of the metric label. Can be CSS size keywords (e.g. x-small), pixel size (e.g. 24px), or relative units (e.g. 5em)" type="String"></property>
         </targetConfig>
         <targetConfig targets="lightningCommunity__Default">
             <property name="recordId" label="Record Id" description="To work on Experience Cloud pages, do not change this value" type="String" default="{!recordId}"/>
@@ -22,6 +24,8 @@
             <property name="themeBackgroundColor" label="Card Background Color" description="Color of the card background for the metric. Can be CSS color keywords (e.g. darkmagenta), HEX values (e.g. #581C5B), or RGB values (e.g. rgb(88,28,91))" type="String"></property>
             <property name="themeMetricTextColor" label="Metric Text Color" description="Color of the metric value. Can be CSS color keywords (e.g. darkmagenta), HEX values (e.g. #581C5B), or RGB values (e.g. rgb(88,28,91))" type="String"></property>
             <property name="themeMetricLabelColor" label="Metric Label Color" description="Color of the metric label. Can be CSS color keywords (e.g. darkmagenta), HEX values (e.g. #581C5B), or RGB values (e.g. rgb(88,28,91))" type="String"></property>
+            <property name="themeMetricTextSize" label="Metric Text Size" description="Size of the metric value. Can be CSS size keywords (e.g. x-small), pixel size (e.g. 24px), or relative units (e.g. 5em)" type="String"></property>
+            <property name="themeMetricLabelSize" label="Metric Label Size" description="Size of the metric label. Can be CSS size keywords (e.g. x-small), pixel size (e.g. 24px), or relative units (e.g. 5em)" type="String"></property>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

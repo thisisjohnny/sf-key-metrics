@@ -8,6 +8,7 @@ export default class KeyMetric extends LightningElement {
     @api metric;
     metricFormatCurrency = false;
     metricFormatNumber = false;
+    metricFormatDate = false;
     metricDisplay = 'code';
     metricMaximumDigits = 2;
     value;
@@ -16,10 +17,10 @@ export default class KeyMetric extends LightningElement {
     renderedCallback() {
         if(this.metric.format == 'currency') {
             this.metricFormatCurrency = true;
-            this.metricFormatNumber = false;
         } else if (this.metric.format == 'percent' || this.metric.format == 'decimal') {
             this.metricFormatNumber = true;
-            this.metricFormatCurrency = false;
+        } else if (this.metric.format == 'date') {
+            this.metricFormatDate = true;
         }
         this.field = this.metric.objectApiName + '.' + this.metric.apiName;
     }
@@ -49,6 +50,30 @@ export default class KeyMetric extends LightningElement {
 
     get metricFormat() {
         return this.metric.format;
+    }
+
+    get metricDayOption() {
+        return this.metric.dateDayOption;
+    }
+
+    get metricMonthOption() {
+        return this.metric.dateMonthOption;
+    }
+
+    get metricYearOption() {
+        return this.metric.dateYearOption;
+    }
+
+    get metricWeekdayOption() {
+        return this.metric.dateWeekdayOption;
+    }
+
+    get metricIncludeWeekday() {
+        if (this.metric.dateWeekdayOption != null) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     get metricCurrency() {

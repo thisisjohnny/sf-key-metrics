@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Metric_4_Format__c</fullName>
+    <fullName>Date_Month_Format__c</fullName>
+    <description>Determines the length of month values in dates being rendered</description>
     <externalId>false</externalId>
     <fieldManageability>DeveloperControlled</fieldManageability>
-    <label>Metric 4 Format</label>
+    <inlineHelpText>For options, in order, will display the following: 1, 01, J, Jan, January. Visit http://sfdc.co/date-component for more details.</inlineHelpText>
+    <label>Date Month Format</label>
     <required>false</required>
     <type>Picklist</type>
     <valueSet>
@@ -11,29 +13,29 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>decimal</fullName>
+                <fullName>numeric</fullName>
                 <default>true</default>
-                <label>decimal</label>
+                <label>numeric</label>
             </value>
             <value>
-                <fullName>currency</fullName>
+                <fullName>2-digit</fullName>
                 <default>false</default>
-                <label>currency</label>
+                <label>2-digit</label>
             </value>
             <value>
-                <fullName>percent</fullName>
+                <fullName>narrow</fullName>
                 <default>false</default>
-                <label>percent</label>
+                <label>narrow</label>
             </value>
             <value>
-                <fullName>date</fullName>
+                <fullName>short</fullName>
                 <default>false</default>
-                <label>date</label>
+                <label>short</label>
             </value>
             <value>
-                <fullName>text</fullName>
+                <fullName>long</fullName>
                 <default>false</default>
-                <label>text</label>
+                <label>long</label>
             </value>
         </valueSetDefinition>
     </valueSet>

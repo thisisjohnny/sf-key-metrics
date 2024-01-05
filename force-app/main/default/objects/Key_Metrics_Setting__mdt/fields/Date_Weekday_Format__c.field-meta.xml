@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Metric_4_Format__c</fullName>
+    <fullName>Date_Weekday_Format__c</fullName>
+    <description>Determines the length of the weekday values in dates being rendered, if at all</description>
     <externalId>false</externalId>
     <fieldManageability>DeveloperControlled</fieldManageability>
-    <label>Metric 4 Format</label>
+    <inlineHelpText>For options, in order, will display the following: M, Mon, Monday. Visit http://sfdc.co/date-component for more details.</inlineHelpText>
+    <label>Date Weekday Format</label>
     <required>false</required>
     <type>Picklist</type>
     <valueSet>
@@ -11,29 +13,19 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>decimal</fullName>
-                <default>true</default>
-                <label>decimal</label>
+                <fullName>narrow</fullName>
+                <default>false</default>
+                <label>narrow</label>
             </value>
             <value>
-                <fullName>currency</fullName>
+                <fullName>short</fullName>
                 <default>false</default>
-                <label>currency</label>
+                <label>short</label>
             </value>
             <value>
-                <fullName>percent</fullName>
+                <fullName>long</fullName>
                 <default>false</default>
-                <label>percent</label>
-            </value>
-            <value>
-                <fullName>date</fullName>
-                <default>false</default>
-                <label>date</label>
-            </value>
-            <value>
-                <fullName>text</fullName>
-                <default>false</default>
-                <label>text</label>
+                <label>long</label>
             </value>
         </valueSetDefinition>
     </valueSet>

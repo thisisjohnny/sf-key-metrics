@@ -4,7 +4,23 @@
     <protected>false</protected>
     <values>
         <field>Card_Format__c</field>
-        <value xsi:type="xsd:string">2</value>
+        <value xsi:type="xsd:string">3</value>
+    </values>
+    <values>
+        <field>Date_Day_Format__c</field>
+        <value xsi:type="xsd:string">2-digit</value>
+    </values>
+    <values>
+        <field>Date_Month_Format__c</field>
+        <value xsi:type="xsd:string">2-digit</value>
+    </values>
+    <values>
+        <field>Date_Weekday_Format__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Date_Year_Format__c</field>
+        <value xsi:type="xsd:string">2-digit</value>
     </values>
     <values>
         <field>Metric_1_API_Name__c</field>
@@ -32,15 +48,15 @@
     </values>
     <values>
         <field>Metric_3_API_Name__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">LastModifiedDate</value>
     </values>
     <values>
         <field>Metric_3_Format__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">date</value>
     </values>
     <values>
         <field>Metric_3_Label__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">Last Mod</value>
     </values>
     <values>
         <field>Metric_4_API_Name__c</field>

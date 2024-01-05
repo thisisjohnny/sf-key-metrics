@@ -8,6 +8,8 @@ export default class KeyMetrics extends LightningElement {
     @api themeBackgroundColor;
     @api themeMetricTextColor;
     @api themeMetricLabelColor;
+    @api themeMetricTextSize;
+    @api themeMetricLabelSize;
 
     metrics = [];
 
@@ -22,39 +24,49 @@ export default class KeyMetrics extends LightningElement {
                 .querySelector("lightning-layout")
                 .style.setProperty("--metric-text-color", this.themeMetricTextColor);
         }
-        if (this.themeMetricLabelColor != null ) {
+        if (this.themeMetricLabelColor != null) {
             this.template
                 .querySelector("lightning-layout")
                 .style.setProperty("--metric-label-color", this.themeMetricLabelColor);
+        }
+        if (this.themeMetricTextSize != null) {
+            this.template
+                .querySelector("lightning-layout")
+                .style.setProperty("--metric-text-size", this.themeMetricTextSize);
+        }
+        if (this.themeMetricLabelSize != null) {
+            this.template
+                .querySelector("lightning-layout")
+                .style.setProperty("--metric-label-size", this.themeMetricLabelSize);
         }
     }
 
     @wire(getMetadataValues, { customMetadataLabel: "$customMetadataLabel" })
     metadataValues({ error, data }) {
         if (data) {
-            if(data.Card_Format__c == 1) {
-                this.metrics = [
-                    { id: 1, recordId: this.recordId, objectApiName: data.Object_API_Name__c, apiName: data.Metric_1_API_Name__c, label: data.Metric_1_Label__c, format: data.Metric_1_Format__c }
-                ]
-            } else if (data.Card_Format__c == 2) {
-                this.metrics = [
-                    { id: 1, recordId: this.recordId, objectApiName: data.Object_API_Name__c, apiName: data.Metric_1_API_Name__c, label: data.Metric_1_Label__c, format: data.Metric_1_Format__c },
-                    { id: 2, recordId: this.recordId, objectApiName: data.Object_API_Name__c, apiName: data.Metric_2_API_Name__c, label: data.Metric_2_Label__c, format: data.Metric_2_Format__c}
-                ];
-            } else if (data.Card_Format__c == 3) {
-                this.metrics = [
-                    { id: 1, recordId: this.recordId, objectApiName: data.Object_API_Name__c, apiName: data.Metric_1_API_Name__c, label: data.Metric_1_Label__c, format: data.Metric_1_Format__c},
-                    { id: 2, recordId: this.recordId, objectApiName: data.Object_API_Name__c, apiName: data.Metric_2_API_Name__c, label: data.Metric_2_Label__c, format: data.Metric_2_Format__c},
-                    { id: 3, recordId: this.recordId, objectApiName: data.Object_API_Name__c, apiName: data.Metric_3_API_Name__c, label: data.Metric_3_Label__c, format: data.Metric_3_Format__c}
-                ];
-            } else if (data.Card_Format__c == 4) {
-                this.metrics = [
-                    { id: 1, recordId: this.recordId, objectApiName: data.Object_API_Name__c, apiName: data.Metric_1_API_Name__c, label: data.Metric_1_Label__c, format: data.Metric_1_Format__c},
-                    { id: 2, recordId: this.recordId, objectApiName: data.Object_API_Name__c, apiName: data.Metric_2_API_Name__c, label: data.Metric_2_Label__c, format: data.Metric_2_Format__c},
-                    { id: 3, recordId: this.recordId, objectApiName: data.Object_API_Name__c, apiName: data.Metric_3_API_Name__c, label: data.Metric_3_Label__c, format: data.Metric_3_Format__c},
-                    { id: 4, recordId: this.recordId, objectApiName: data.Object_API_Name__c, apiName: data.Metric_4_API_Name__c, label: data.Metric_4_Label__c, format: data.Metric_4_Format__c}
-                ];
+            let n = 0;
+            let m = [];
+
+            while (n < data.Card_Format__c) {
+                n += 1;
+                let metricApiKeyName = 'Metric_' + n + '_API_Name__c';
+                let metricLabelKeyName = 'Metric_' + n + '_Label__c';
+                let metricFormatKeyName = 'Metric_' + n + '_Format__c';
+                
+                m.push({
+                    id: n,
+                    recordId: this.recordId, 
+                    objectApiName: data.Object_API_Name__c, 
+                    apiName: data[metricApiKeyName], 
+                    label: data[metricLabelKeyName], 
+                    format: data[metricFormatKeyName],
+                    dateDayOption: data.Date_Day_Format__c, 
+                    dateMonthOption: data.Date_Month_Format__c, 
+                    dateYearOption: data.Date_Year_Format__c, 
+                    dateWeekdayOption: data.Date_Weekday_Format__c
+                });
             }
+            this.metrics = this.metrics.concat(m);
         } else if (error) {
             const errorToastEvent = new ShowToastEvent({
                 title: "Error Loading Custom Metadata Type",

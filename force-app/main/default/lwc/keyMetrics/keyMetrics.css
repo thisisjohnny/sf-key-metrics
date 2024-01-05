@@ -2,4 +2,6 @@
     --card-background-color: #e9f3fd;
     --metric-text-color: #17577D;
     --metric-label-color: #0c2b3e;
+    --metric-text-size: 5em;
+    --metric-label-size: 1em;
 }

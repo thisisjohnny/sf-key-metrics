@@ -4,10 +4,10 @@
 
 .metric-value {
     color: var(--metric-text-color, #17577D);
-    font-size: 5em;
+    font-size: var(--metric-text-size, 5em);
 }
 
 .metric-label {
     color: var(--metric-label-color, #0c2b3e);
-    font-size: 1em;
+    font-size: var(--metric-label-size, 1em);
 }

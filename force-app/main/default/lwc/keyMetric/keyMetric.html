@@ -8,6 +8,14 @@
             <template lwc:elseif={metricFormatNumber}>
                 <lightning-formatted-number value={value} format-style={metricFormat} maximum-fraction-digits={metricMaximumDigits}></lightning-formatted-number>
             </template>
+            <template lwc:elseif={metricFormatDate}>
+                <template lwc:if={metricIncludeWeekday}>
+                    <lightning-formatted-date-time value={value} year={metricYearOption} month={metricMonthOption} day={metricDayOption} weekday={metricWeekdayOption}></lightning-formatted-date-time>
+                </template>
+                <template lwc:else>
+                    <lightning-formatted-date-time value={value} year={metricYearOption} month={metricMonthOption} day={metricDayOption}></lightning-formatted-date-time>
+                </template>
+            </template>
             <template lwc:else>
                 <lightning-formatted-rich-text value={value}></lightning-formatted-rich-text>
             </template>

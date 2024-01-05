@@ -16,7 +16,11 @@ public with sharing class KeyMetricsController {
                 Metric_3_Format__c,
                 Metric_4_API_Name__c,
                 Metric_4_Label__c,
-                Metric_4_Format__c
+                Metric_4_Format__c,
+                Date_Day_Format__c,
+                Date_Month_Format__c,
+                Date_Year_Format__c,
+                Date_Weekday_Format__c
             FROM
                 Key_Metrics_Setting__mdt 
             WHERE

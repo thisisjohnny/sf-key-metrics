@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_Year_Format__c</fullName>
+    <description>Determines the length of year values in dates being rendered</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>&apos;numeric&apos; will display the entire year (e.g. 2024). Visit http://sfdc.co/date-component for more details.</inlineHelpText>
+    <label>Date Year Format</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>numeric</fullName>
+                <default>true</default>
+                <label>numeric</label>
+            </value>
+            <value>
+                <fullName>2-digit</fullName>
+                <default>false</default>
+                <label>2-digit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
