@@ -52,7 +52,7 @@ export default class KeyMetrics extends LightningElement {
                 let metricApiKeyName = 'Metric_' + n + '_API_Name__c';
                 let metricLabelKeyName = 'Metric_' + n + '_Label__c';
                 let metricFormatKeyName = 'Metric_' + n + '_Format__c';
-                
+
                 m.push({
                     id: n,
                     recordId: this.recordId, 
@@ -63,7 +63,8 @@ export default class KeyMetrics extends LightningElement {
                     dateDayOption: data.Date_Day_Format__c, 
                     dateMonthOption: data.Date_Month_Format__c, 
                     dateYearOption: data.Date_Year_Format__c, 
-                    dateWeekdayOption: data.Date_Weekday_Format__c
+                    dateWeekdayOption: data.Date_Weekday_Format__c,
+                    currencyDisplay: data.Currency_Format__c
                 });
             }
             this.metrics = this.metrics.concat(m);

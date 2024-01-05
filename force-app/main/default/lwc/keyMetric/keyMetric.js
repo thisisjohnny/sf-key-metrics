@@ -9,7 +9,6 @@ export default class KeyMetric extends LightningElement {
     metricFormatCurrency = false;
     metricFormatNumber = false;
     metricFormatDate = false;
-    metricDisplay = 'code';
     metricMaximumDigits = 2;
     value;
     field;
@@ -76,7 +75,11 @@ export default class KeyMetric extends LightningElement {
         }
     }
 
-    get metricCurrency() {
+    get metricCurrencyDisplay() {
+        return this.metric.currencyDisplay;
+    }
+
+    get metricCurrencyCode() {
         return CURRENCY;
     }
 }
