@@ -75,6 +75,10 @@
         <value xsi:nil="true"/>
     </values>
     <values>
+        <field>Number_Notation__c</field>
+        <value xsi:type="xsd:string">standard</value>
+    </values>
+    <values>
         <field>Object_API_Name__c</field>
         <value xsi:type="xsd:string">Account</value>
     </values>

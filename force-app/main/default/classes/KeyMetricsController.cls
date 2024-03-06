@@ -21,7 +21,8 @@ public with sharing class KeyMetricsController {
                 Date_Month_Format__c,
                 Date_Year_Format__c,
                 Date_Weekday_Format__c,
-                Currency_Format__c
+                Currency_Format__c,
+                Number_Notation__c
             FROM
                 Key_Metrics_Setting__mdt 
             WHERE

@@ -3,7 +3,7 @@
         <!-- large formatted metric -->
         <div class="metric-value">
             <template lwc:if={metricFormatCurrency}>
-                <lightning-formatted-number value={value} format-style={metricFormat} currency-code={metricCurrencyCode} currency-display-as={metricCurrencyDisplay}></lightning-formatted-number>
+                {metricCurrencyValue}
             </template>
             <template lwc:elseif={metricFormatNumber}>
                 <lightning-formatted-number value={value} format-style={metricFormat} maximum-fraction-digits={metricMaximumDigits}></lightning-formatted-number>

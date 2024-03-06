@@ -82,4 +82,22 @@ export default class KeyMetric extends LightningElement {
     get metricCurrencyCode() {
         return CURRENCY;
     }
+
+    get numberNotation() {
+        return this.metric.numberNotation;
+    }
+
+    get metricCurrencyValue() {
+        const DISPLAY = this.metricCurrencyDisplay;
+        const NOTATION = this.numberNotation;
+
+        let formattedValue = new Intl.NumberFormat("en-US", {
+            currency: CURRENCY,
+            currencyDisplay: DISPLAY,
+            style: "currency",
+            notation: NOTATION,
+        }).format(this.value);     
+        
+        return formattedValue;
+    }
 }

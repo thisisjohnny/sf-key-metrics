@@ -64,7 +64,8 @@ export default class KeyMetrics extends LightningElement {
                     dateMonthOption: data.Date_Month_Format__c, 
                     dateYearOption: data.Date_Year_Format__c, 
                     dateWeekdayOption: data.Date_Weekday_Format__c,
-                    currencyDisplay: data.Currency_Format__c
+                    currencyDisplay: data.Currency_Format__c,
+                    numberNotation: data.Number_Notation__c
                 });
             }
             this.metrics = this.metrics.concat(m);
