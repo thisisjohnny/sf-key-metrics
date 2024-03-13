@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>59.0</apiVersion>
+    <apiVersion>60.0</apiVersion>
     <isExposed>true</isExposed>
     <masterLabel>Key Metrics</masterLabel>
     <description>Displays dynamic list of key metrics from the object record page</description>
@@ -17,6 +17,10 @@
             <property name="themeMetricLabelColor" label="Metric Label Color" description="Color of the metric label. Can be CSS color keywords (e.g. darkmagenta), HEX values (e.g. #581C5B), or RGB values (e.g. rgb(88,28,91))" type="String"></property>
             <property name="themeMetricTextSize" label="Metric Text Size" description="Size of the metric value. Can be CSS size keywords (e.g. x-small), pixel size (e.g. 24px), or relative units (e.g. 5em)" type="String"></property>
             <property name="themeMetricLabelSize" label="Metric Label Size" description="Size of the metric label. Can be CSS size keywords (e.g. x-small), pixel size (e.g. 24px), or relative units (e.g. 5em)" type="String"></property>
+            <supportedFormFactors>
+                <supportedFormFactor type="Large" />
+                <supportedFormFactor type="Small" />
+            </supportedFormFactors>
         </targetConfig>
         <targetConfig targets="lightningCommunity__Default">
             <property name="recordId" label="Record Id" description="To work on Experience Cloud pages, do not change this value" type="String" default="{!recordId}"/>
