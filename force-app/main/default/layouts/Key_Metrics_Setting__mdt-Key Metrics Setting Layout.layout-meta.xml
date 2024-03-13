@@ -38,11 +38,12 @@
                 <field>Card_Format__c</field>
             </layoutItems>
             <layoutItems>
-                <emptySpace>true</emptySpace>
+                <behavior>Edit</behavior>
+                <field>Currency_Format__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Currency_Format__c</field>
+                <field>Currency_Notation__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

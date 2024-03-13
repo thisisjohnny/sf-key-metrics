@@ -6,7 +6,12 @@
                 {metricCurrencyValue}
             </template>
             <template lwc:elseif={metricFormatNumber}>
-                <lightning-formatted-number value={value} format-style={metricFormat} maximum-fraction-digits={metricMaximumDigits}></lightning-formatted-number>
+                <template lwc:if={metricDecimal}>
+                    {metricNumberValue}
+                </template>
+                <template lwc:else>
+                    <lightning-formatted-number value={value} format-style={metricFormat} maximum-fraction-digits={metricMaximumDigits}></lightning-formatted-number>
+                </template>
             </template>
             <template lwc:elseif={metricFormatDate}>
                 <template lwc:if={metricIncludeWeekday}>

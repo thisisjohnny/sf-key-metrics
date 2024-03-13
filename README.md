@@ -21,6 +21,12 @@ Rather than using property fields on the component settings of a Lightning App B
 
 The Card Format allows for four options: 1, 2, 3, and 4-up configurations—meaning the component will render at minimum 1 and at most 4 metrics at a time. This is to help ensure the metrics have enough space to 'breathe' in the interface. If you would like to include more than four metrics on a single record page, create multiple custom metadata type records and include the Key Metrics component on the page as many times as needed.
 
+Each Card has options for how to render types of metrics.
+- Currency metrics can display the symbol ($), the code (USD), or the name (Dollars).
+- Additionally you can determine the notation of currency metrics to be standard ($3,500) or compact ($3.5K).
+- Number metrics can also have a notation for decimal values only with an added option for scientific notation (3.5E6).
+- Date metrics have a few options for how to render the year, month, day, and weekday (optional). Check the [documentation](http://sfdc.co/date-component) for full details and a playground to preview different options.
+
 For each metric, you need to provide the following information:
 1. **Metric Label**: This component allows for flexibility in naming the label for your metric rather than pulling from the metadata of the org schema itself. E.g. If the field label in your org is “Approved Quote Lines with Discount”, the metric label in the component configuration can simply be “Approved Discounts”.
 2. **Metric API Name**: This is the API name of the field you would like to render in the component. As with the Object API Name, you will need to include the `__c` suffix for any custom fields.

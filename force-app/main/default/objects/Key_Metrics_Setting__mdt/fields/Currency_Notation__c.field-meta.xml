@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Number_Notation__c</fullName>
+    <fullName>Currency_Notation__c</fullName>
     <description>Based on Intl.NumberFormat() javascript object standard values to determine how numbers are rendered</description>
     <externalId>false</externalId>
     <fieldManageability>DeveloperControlled</fieldManageability>
-    <inlineHelpText>E.g. &quot;standard&quot; = 3,500,000; &quot;scientific&quot; = 3.5E6; &quot;compact&quot; = 3.5M. Applies only to &apos;decimal&apos; metric formats</inlineHelpText>
-    <label>Number Notation</label>
+    <inlineHelpText>E.g. &quot;standard&quot; = $3,500,000; &quot;compact&quot; = $3.5M</inlineHelpText>
+    <label>Currency Notation</label>
     <required>false</required>
     <type>Picklist</type>
     <valueSet>
@@ -16,11 +16,6 @@
                 <fullName>standard</fullName>
                 <default>true</default>
                 <label>standard</label>
-            </value>
-            <value>
-                <fullName>scientific</fullName>
-                <default>false</default>
-                <label>scientific</label>
             </value>
             <value>
                 <fullName>compact</fullName>

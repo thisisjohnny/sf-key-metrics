@@ -14,7 +14,7 @@ export default class KeyMetric extends LightningElement {
     field;
 
     renderedCallback() {
-        if(this.metric.format == 'currency') {
+        if (this.metric.format == 'currency') {
             this.metricFormatCurrency = true;
         } else if (this.metric.format == 'percent' || this.metric.format == 'decimal') {
             this.metricFormatNumber = true;
@@ -26,7 +26,7 @@ export default class KeyMetric extends LightningElement {
 
     @wire(getRecord, {recordId: "$metric.recordId", fields: "$field"})
     metricValue({ error, data }) {
-        if(data && this.metric.format == 'percent') {
+        if (data && this.metric.format == 'percent') {
             let fieldValue = getFieldValue(data, this.field);
             this.value = fieldValue / 100;
         } else if (data) {
@@ -83,13 +83,17 @@ export default class KeyMetric extends LightningElement {
         return CURRENCY;
     }
 
+    get currencyNotation() {
+        return this.metric.currencyNotation;
+    }
+
     get numberNotation() {
         return this.metric.numberNotation;
     }
 
     get metricCurrencyValue() {
         const DISPLAY = this.metricCurrencyDisplay;
-        const NOTATION = this.numberNotation;
+        const NOTATION = this.currencyNotation;
 
         let formattedValue = new Intl.NumberFormat("en-US", {
             currency: CURRENCY,
@@ -98,6 +102,26 @@ export default class KeyMetric extends LightningElement {
             notation: NOTATION,
         }).format(this.value);     
         
+        return formattedValue;
+    }
+
+    get metricDecimal() {
+        if (this.metricFormat == 'decimal') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    get metricNumberValue() {
+        const NOTATION = this.numberNotation;
+
+        let formattedValue = new Intl.NumberFormat("en-US", {
+            style: "decimal",
+            maximumFractionDigits: this.metricMaximumDigits,
+            notation: NOTATION,
+        }).format(this.value);
+
         return formattedValue;
     }
 }

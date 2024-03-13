@@ -65,6 +65,7 @@ export default class KeyMetrics extends LightningElement {
                     dateYearOption: data.Date_Year_Format__c, 
                     dateWeekdayOption: data.Date_Weekday_Format__c,
                     currencyDisplay: data.Currency_Format__c,
+                    currencyNotation: data.Currency_Notation__c,
                     numberNotation: data.Number_Notation__c
                 });
             }
