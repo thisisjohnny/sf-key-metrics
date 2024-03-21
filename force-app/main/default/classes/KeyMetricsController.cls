@@ -1,6 +1,18 @@
+/**
+ * @author John Scardino
+ * @date 2024
+ * 
+ * @description Controller for Key_Metrics_UI__mdt to be used on Key Metrics LWC.
+ * Brings in relevant configuration options to use for rendering metrics dynamically.
+ * 
+ * @returns {Key_Metrics_Setting__mdt} fields related to metrics used, and rendering options.
+ */
 public with sharing class KeyMetricsController {
+    // method enabled for LWC use
     @AuraEnabled(cacheable=true)
-    public static Key_Metrics_Setting__mdt getMetadataValues(String customMetadataLabel) {
+    public static Key_Metrics_Setting__mdt getMetadataValues(String customMetadataLabel) { // NOPMD
+        // query custom metadata type for relevant settings to the Key Metrics Component 
+        // security enforced to ensure access is enforced via FLS/CRUD on Key_Metrics_Setting__mdt
         Key_Metrics_Setting__mdt metricSettings = [
             SELECT
                 Object_API_Name__c, 
@@ -27,7 +39,10 @@ public with sharing class KeyMetricsController {
             FROM
                 Key_Metrics_Setting__mdt 
             WHERE
-                MasterLabel = :customMetadataLabel LIMIT 1
+                MasterLabel = :customMetadataLabel 
+            WITH
+                SECURITY_ENFORCED
+            LIMIT 1
         ];
 
         return metricSettings;
