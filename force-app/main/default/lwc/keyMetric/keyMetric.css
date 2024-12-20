@@ -1,5 +1,7 @@
 .metric-card {
     background: var(--card-background-color, #e9f3fd);
+    border-radius: var(--slds-c-card-radius-border, var(--slds-s-container-radius-border, var(--slds-g-radius-border-2)));
+    box-shadow: var(--slds-c-card-shadow, var(--slds-s-container-shadow, var(--slds-g-shadow-2)));
 }
 
 .metric-value {

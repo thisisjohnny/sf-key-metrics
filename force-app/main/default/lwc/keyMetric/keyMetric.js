@@ -95,7 +95,7 @@ export default class KeyMetric extends LightningElement {
         const DISPLAY = this.metricCurrencyDisplay;
         const NOTATION = this.currencyNotation;
 
-        let formattedValue = new Intl.NumberFormat("en-US", {
+        let formattedValue = new Intl.NumberFormat(LOCALE, {
             currency: CURRENCY,
             currencyDisplay: DISPLAY,
             style: "currency",
@@ -116,7 +116,7 @@ export default class KeyMetric extends LightningElement {
     get metricNumberValue() {
         const NOTATION = this.numberNotation;
 
-        let formattedValue = new Intl.NumberFormat("en-US", {
+        let formattedValue = new Intl.NumberFormat(LOCALE, {
             style: "decimal",
             maximumFractionDigits: this.metricMaximumDigits,
             notation: NOTATION,
