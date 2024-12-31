@@ -1,0 +1,23 @@
+{
+  "Object_API_Name__c": "Account",
+  "Card_Format__c": "3-Up",
+  "Metric_1_API_Name__c": "AnnualRevenue",
+  "Metric_1_Label__c": "Annual Revenue",
+  "Metric_1_Format__c": "currency",
+  "Metric_2_API_Name__c": "Rating",
+  "Metric_2_Label__c": "Rating",
+  "Metric_2_Format__c": "tect",
+  "Metric_3_API_Name__c": "Employees",
+  "Metric_3_Label__c": "NumberOfEmployees",
+  "Metric_3_Format__c": "decimal",
+  "Metric_4_API_Name__c": "",
+  "Metric_4_Label__c": "",
+  "Metric_4_Format__c": "",
+  "Date_Day_Format__c": "2-digit",
+  "Date_Month_Format__c": "2-digit",
+  "Date_Year_Format__c": "numeric",
+  "Date_Weekday_Format__c": "",
+  "Currency_Format__c": "symbol",
+  "Currency_Notation__c": "compact",
+  "Number_Notation__c": "standard"
+}
